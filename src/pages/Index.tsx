@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import heroLogo from "@/assets/hero-logo.png";
 import cookieStackLeft from "@/assets/cookie-stack-left.png";
 import cookieStackRight from "@/assets/cookie-stack-right.png";
 
@@ -22,19 +21,6 @@ const Index = () => {
         {/* Overlay for readability */}
         <div className="absolute inset-0 bg-cookie-pink/30" />
 
-        <div className="relative z-10 flex flex-col items-center gap-6 py-16 px-4">
-          <img
-            src={heroLogo}
-            alt="Little Cookie Co. – Baked Fresh. Die Happy."
-            className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full shadow-2xl"
-          />
-          <Link
-            to="/contact"
-            className="bg-primary text-primary-foreground font-bold text-sm uppercase tracking-wide px-8 py-3 rounded-full shadow-lg transition-transform hover:scale-105"
-          >
-            Click here
-          </Link>
-        </div>
       </section>
 
       {/* Tagline */}
