@@ -20,32 +20,34 @@ const Index = () => {
       */}
       <section className="relative flex min-h-[82vh] w-full items-center justify-center overflow-hidden bg-cookie-pink pb-24 sm:pb-20 md:pb-0">
 
-        {/* Top-left — top-view cookie, slow clockwise spin */}
+        {/* Top-left — top-view cookie, slow clockwise spin, organic blob shape */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -left-6 -top-6 h-28 w-28 overflow-hidden rounded-full animate-spin-slow
-                     sm:-left-8 sm:-top-8 sm:h-40 sm:w-40
-                     md:-left-10 md:-top-10 md:h-52 md:w-52
-                     lg:-left-12 lg:-top-12 lg:h-64 lg:w-64"
+          className="pointer-events-none absolute -left-4 -top-4 h-24 w-24 overflow-hidden animate-spin-slow
+                     sm:-left-5 sm:-top-5 sm:h-32 sm:w-32
+                     md:h-40 md:w-40
+                     lg:-left-6 lg:-top-6 lg:h-48 lg:w-48"
+          style={{ borderRadius: '45% 55% 60% 40% / 50% 40% 55% 45%' }}
         >
           <img
             alt=""
-            className="h-full w-full scale-[1.2] object-cover object-center"
+            className="h-full w-full scale-[1.1] object-cover object-center"
             src={cookieTopView}
           />
         </div>
 
-        {/* Top-right — top-view cookie, slower counter-clockwise spin */}
+        {/* Top-right — top-view cookie, slower counter-clockwise spin, different blob */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -right-6 -top-6 h-24 w-24 overflow-hidden rounded-full animate-spin-slow-reverse
-                     sm:-right-8 sm:-top-8 sm:h-36 sm:w-36
-                     md:-right-10 md:-top-10 md:h-44 md:w-44
-                     lg:-right-12 lg:-top-12 lg:h-56 lg:w-56"
+          className="pointer-events-none absolute -right-3 -top-3 h-20 w-20 overflow-hidden animate-spin-slow-reverse
+                     sm:-right-4 sm:-top-4 sm:h-28 sm:w-28
+                     md:h-36 md:w-36
+                     lg:-right-5 lg:-top-5 lg:h-44 lg:w-44"
+          style={{ borderRadius: '60% 40% 45% 55% / 55% 60% 40% 50%' }}
         >
           <img
             alt=""
-            className="h-full w-full scale-[1.2] object-cover object-center"
+            className="h-full w-full scale-[1.1] object-cover object-center"
             src={cookieTopView}
           />
         </div>
@@ -63,7 +65,7 @@ const Index = () => {
           />
         </div>
 
-        {/* Bottom-right — hero stack mirrored, no animation */}
+        {/* Bottom-right — hero stack, same direction, no animation */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute bottom-0 -right-2 w-24
@@ -71,7 +73,7 @@ const Index = () => {
         >
           <img
             alt=""
-            className="h-auto w-full object-contain object-bottom [transform:scaleX(-1)]"
+            className="h-auto w-full object-contain object-bottom"
             src={cookieStackHero}
           />
         </div>
