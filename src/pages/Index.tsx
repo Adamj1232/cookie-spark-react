@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import cookieStackLeft from "@/assets/cookie-stack-left.png";
 import cookieStackRight from "@/assets/cookie-stack-right.png";
+import cookieTopView from "@/assets/cookie-top-view.png";
+import cookieStackHero from "@/assets/cookie-stack-hero.png";
 import logoSquare from "@/assets/logo-square.png";
 import { CookieMenuSection } from "@/features/ordering/components/CookieMenuSection";
 import { LocalBusinessSchema } from "@/features/ordering/components/LocalBusinessSchema";
@@ -13,57 +15,57 @@ const Index = () => {
       {/* ── Hero ─────────────────────────────────────────── */}
       <section className="relative flex min-h-[80vh] w-full items-center justify-center overflow-hidden bg-cookie-pink">
 
-        {/* Top-left — circular crop, slow spin */}
+        {/* Top-left — top-view cookie, slow clockwise spin */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -left-10 -top-10 h-40 w-40 overflow-hidden rounded-full animate-spin-slow [filter:drop-shadow(0_4px_14px_rgba(120,50,10,0.35))]
-                     sm:h-52 sm:w-52 sm:-left-12 sm:-top-12
-                     lg:h-64 lg:w-64 lg:-left-14 lg:-top-14"
+          className="pointer-events-none absolute -left-8 -top-8 h-36 w-36 overflow-hidden rounded-full animate-spin-slow
+                     sm:-left-10 sm:-top-10 sm:h-48 sm:w-48
+                     lg:-left-12 lg:-top-12 lg:h-60 lg:w-60"
         >
           <img
             alt=""
-            className="h-full w-full scale-[1.8] object-cover object-top"
-            src={cookieStackLeft}
+            className="h-full w-full scale-[1.15] object-cover object-center"
+            src={cookieTopView}
           />
         </div>
 
-        {/* Top-right — circular crop, slower reverse spin */}
+        {/* Top-right — top-view cookie, slower counter-clockwise spin */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -right-10 -top-10 h-36 w-36 overflow-hidden rounded-full animate-spin-slow-reverse [filter:drop-shadow(0_4px_14px_rgba(120,50,10,0.35))]
-                     sm:h-48 sm:w-48 sm:-right-12 sm:-top-12
-                     lg:h-60 lg:w-60 lg:-right-14 lg:-top-14"
+          className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 overflow-hidden rounded-full animate-spin-slow-reverse
+                     sm:-right-10 sm:-top-10 sm:h-44 sm:w-44
+                     lg:-right-12 lg:-top-12 lg:h-56 lg:w-56"
         >
           <img
             alt=""
-            className="h-full w-full scale-[1.8] object-cover object-top"
-            src={cookieStackRight}
+            className="h-full w-full scale-[1.15] object-cover object-center"
+            src={cookieTopView}
           />
         </div>
 
-        {/* Bottom-left — full stack */}
+        {/* Bottom-left — hero stack, no animation, left-anchored */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute bottom-0 left-0 w-32 animate-cookie-float
-                     sm:w-44 lg:w-64"
+          className="pointer-events-none absolute bottom-0 -left-2 w-28
+                     sm:w-40 md:w-52 lg:w-64"
         >
           <img
             alt=""
             className="w-full h-auto object-contain object-bottom"
-            src={cookieStackLeft}
+            src={cookieStackHero}
           />
         </div>
 
-        {/* Bottom-right — full stack */}
+        {/* Bottom-right — hero stack mirrored, no animation */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute bottom-0 right-0 w-32 animate-cookie-float-delayed
-                     sm:w-44 lg:w-64"
+          className="pointer-events-none absolute bottom-0 -right-2 w-28
+                     sm:w-40 md:w-52 lg:w-64"
         >
           <img
             alt=""
-            className="w-full h-auto object-contain object-bottom"
-            src={cookieStackRight}
+            className="w-full h-auto object-contain object-bottom [transform:scaleX(-1)]"
+            src={cookieStackHero}
           />
         </div>
 
