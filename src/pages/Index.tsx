@@ -4,36 +4,80 @@ import cookieStackRight from "@/assets/cookie-stack-right.png";
 import logoSquare from "@/assets/logo-square.png";
 import { CookieMenuSection } from "@/features/ordering/components/CookieMenuSection";
 import { LocalBusinessSchema } from "@/features/ordering/components/LocalBusinessSchema";
-import { useIsMobile } from "@/hooks/use-mobile";
-
-const VIDEO_URL =
-  "https://www.littlecookieco.com/wp-content/uploads/2026/02/cookies-7.mp4";
 
 const Index = () => {
-  const isMobile = useIsMobile();
-
   return (
     <main>
       <LocalBusinessSchema />
 
+      {/* ── Hero ─────────────────────────────────────────── */}
       <section className="relative flex min-h-[80vh] w-full items-center justify-center overflow-hidden bg-cookie-pink">
-        {isMobile ? (
-          <img alt="Freshly baked cookies" className="absolute inset-0 h-full w-full object-cover" src={logoSquare} />
-        ) : (
-          <video
-            autoPlay
-            className="absolute inset-0 h-full w-full object-cover"
-            loop
-            muted
-            playsInline
-            poster={logoSquare}
-            preload="metadata"
-            src={VIDEO_URL}
+
+        {/* Top-left — circular crop, slow spin */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -left-10 -top-10 h-40 w-40 overflow-hidden rounded-full animate-spin-slow [filter:drop-shadow(0_4px_14px_rgba(120,50,10,0.35))]
+                     sm:h-52 sm:w-52 sm:-left-12 sm:-top-12
+                     lg:h-64 lg:w-64 lg:-left-14 lg:-top-14"
+        >
+          <img
+            alt=""
+            className="h-full w-full scale-[1.8] object-cover object-top"
+            src={cookieStackLeft}
           />
-        )}
-        <div className="absolute inset-0 bg-cookie-pink/30" />
+        </div>
+
+        {/* Top-right — circular crop, slower reverse spin */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-10 -top-10 h-36 w-36 overflow-hidden rounded-full animate-spin-slow-reverse [filter:drop-shadow(0_4px_14px_rgba(120,50,10,0.35))]
+                     sm:h-48 sm:w-48 sm:-right-12 sm:-top-12
+                     lg:h-60 lg:w-60 lg:-right-14 lg:-top-14"
+        >
+          <img
+            alt=""
+            className="h-full w-full scale-[1.8] object-cover object-top"
+            src={cookieStackRight}
+          />
+        </div>
+
+        {/* Bottom-left — full stack */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute bottom-0 left-0 w-32 animate-cookie-float
+                     sm:w-44 lg:w-64"
+        >
+          <img
+            alt=""
+            className="w-full h-auto object-contain object-bottom"
+            src={cookieStackLeft}
+          />
+        </div>
+
+        {/* Bottom-right — full stack */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute bottom-0 right-0 w-32 animate-cookie-float-delayed
+                     sm:w-44 lg:w-64"
+        >
+          <img
+            alt=""
+            className="w-full h-auto object-contain object-bottom"
+            src={cookieStackRight}
+          />
+        </div>
+
+        {/* Centre logo */}
+        <div className="relative z-10 animate-logo-float px-4">
+          <img
+            alt="Little Cookie Co. — Freshly baked in Arvada"
+            className="w-44 drop-shadow-2xl sm:w-64 md:w-80 lg:w-[22rem]"
+            src={logoSquare}
+          />
+        </div>
       </section>
 
+      {/* ── Tagline bar ───────────────────────────────────── */}
       <section className="bg-cookie-pink py-4">
         <p className="text-center font-heading text-lg tracking-wider text-primary sm:text-xl md:text-2xl">
           SMALL-BATCH COOKIES, BAKED TO ORDER IN ARVADA.
@@ -42,6 +86,7 @@ const Index = () => {
 
       <CookieMenuSection />
 
+      {/* ── Special Orders ────────────────────────────────── */}
       <section className="relative overflow-hidden bg-cookie-pink py-16 sm:py-24">
         <img
           alt=""

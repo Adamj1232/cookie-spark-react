@@ -88,3 +88,46 @@
     @apply font-heading;
   }
 }
+
+@keyframes cookie-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-14px); }
+}
+
+@keyframes cookie-float-delayed {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes cookie-spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes cookie-spin-reverse {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes logo-float {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-8px) scale(1.02); }
+}
+
+@layer utilities {
+  .animate-cookie-float {
+    animation: cookie-float 4s ease-in-out infinite;
+  }
+  .animate-cookie-float-delayed {
+    animation: cookie-float-delayed 4.5s ease-in-out infinite 1.2s;
+  }
+  .animate-spin-slow {
+    animation: cookie-spin-slow 22s linear infinite;
+  }
+  .animate-spin-slow-reverse {
+    animation: cookie-spin-reverse 28s linear infinite;
+  }
+  .animate-logo-float {
+    animation: logo-float 5s ease-in-out infinite;
+  }
+}
