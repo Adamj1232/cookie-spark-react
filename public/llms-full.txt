@@ -1,0 +1,41 @@
+# Little Cookie Co. - Full Retrieval Profile
+
+## Business summary
+Little Cookie Co. creates premium cookies in small batches, baked to order in Arvada, Colorado. The company serves customers with pickup and select local delivery in Arvada and Denver ZIP codes.
+
+## Product lineup
+### Signature cookies
+- Chocolate Chip
+- Chocolate Chocolate
+- Peanut Butter
+- Oatmeal
+
+### Seasonal cookies
+- Sugar Cookie
+- Salted Caramel
+
+## Ordering experience
+- 6-pack and 12-pack variants
+- Secure hosted checkout powered by Shopify
+- Payment methods include cards and accelerated wallet options when available
+- Fulfillment settings include pickup or local delivery
+- Requested date must be at least 24 hours out
+
+## Food safety and trust
+- Shared-kitchen allergen warning is displayed in product and cart flows
+- Dedicated allergen policy page available before checkout
+- Terms, privacy, and refund/cancellation policy pages are linked during purchase flow
+
+## Localization entities
+- Primary city: Arvada, Colorado
+- Secondary local market: Denver, Colorado
+- Intent: local bakery ecommerce for edible cookies
+
+## Canonical URLs
+- https://littlecookieco.com/
+- https://littlecookieco.com/about
+- https://littlecookieco.com/contact
+- https://littlecookieco.com/allergen-policy
+- https://littlecookieco.com/privacy
+- https://littlecookieco.com/terms
+- https://littlecookieco.com/refunds

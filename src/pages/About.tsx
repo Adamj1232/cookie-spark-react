@@ -5,68 +5,53 @@ import logoSquare from "@/assets/logo-square.png";
 const About = () => {
   return (
     <main>
-      {/* Page Header */}
       <section
-        className="relative bg-muted flex flex-col items-center justify-center py-20 px-4"
+        className="relative flex flex-col items-center justify-center bg-muted px-4 py-20"
         style={{
           backgroundImage: `url(${pageHeaderBg})`,
           backgroundSize: "cover",
           backgroundPosition: "center bottom",
         }}
       >
-        <h1 className="font-heading text-foreground text-4xl sm:text-5xl mb-3">
-          About
-        </h1>
-        <p className="text-muted-foreground text-base sm:text-lg">
-          Subheading: Craft a compelling subheading that sparks curiosity.
+        <h1 className="mb-3 text-4xl text-foreground sm:text-5xl">About Little Cookie Co.</h1>
+        <p className="max-w-2xl text-center text-base text-foreground/80 sm:text-lg">
+          Premium small-batch cookies baked to order in Arvada, Colorado.
         </p>
       </section>
 
-      {/* About Content */}
-      <section className="max-w-6xl mx-auto px-4 py-16 sm:py-24 grid md:grid-cols-2 gap-12 items-center">
-        <img
-          src={logoSquare}
-          alt="About Little Cookie Co."
-          className="rounded-lg shadow-md w-full max-w-md mx-auto"
-        />
+      <section className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-16 sm:py-24 md:grid-cols-2">
+        <img alt="Little Cookie Co. logo" className="mx-auto w-full max-w-md rounded-lg shadow-md" src={logoSquare} />
         <div>
-          <h2 className="font-heading text-foreground text-3xl sm:text-4xl mb-6">
-            About Heading
-          </h2>
-          <p className="text-foreground/80 leading-relaxed mb-4">
-            About Text: In this section, you can provide a detailed paragraph
-            that delves into the history, values, and mission of your web
-            development business. Highlight expertise, unique approach of your
-            team, and the commitment that sets you apart.
+          <h2 className="mb-6 text-3xl text-foreground sm:text-4xl">Freshness and consistency first</h2>
+          <p className="mb-4 leading-relaxed text-foreground/80">
+            We focus on a tight lineup of cookies we can execute at a high standard every single bake. Each order is
+            prepared in small batches so texture, flavor, and finish are consistent from first bite to last.
           </p>
-          <p className="text-foreground/80 leading-relaxed mb-8">
-            Emphasize your passion for creating exceptional web solutions and
-            convey your dedication to delivering remarkable results for clients.
+          <p className="mb-8 leading-relaxed text-foreground/80">
+            Our core menu includes Chocolate Chip, Chocolate Chocolate, Peanut Butter, and Oatmeal, with seasonal
+            flavors rotating throughout the year. Pickup is based in Arvada with local delivery in select ZIP codes.
           </p>
-          <Link
-            to="/contact"
-            className="inline-block bg-primary text-primary-foreground font-bold text-sm uppercase tracking-wide px-8 py-3 rounded-full shadow-lg transition-transform hover:scale-105"
+          <a
+            className="inline-block rounded-full bg-primary px-8 py-3 text-sm font-bold uppercase tracking-wide text-primary-foreground shadow-lg transition-transform hover:scale-105"
+            href="/#order-cookies"
           >
-            CTA Button
-          </Link>
+            Order Cookies
+          </a>
         </div>
       </section>
 
-      {/* Talk To Us */}
       <section className="bg-muted py-16 sm:py-24">
-        <div className="max-w-3xl mx-auto text-center px-4">
-          <h2 className="font-heading text-foreground text-3xl sm:text-4xl mb-4">
-            Talk To Us Heading
-          </h2>
-          <p className="text-foreground/80 leading-relaxed mb-8">
-            You can compose a friendly and informative paragraph that encourages
-            visitors to engage with your business.
+        <div className="mx-auto max-w-3xl px-4 text-center">
+          <h2 className="mb-4 text-3xl text-foreground sm:text-4xl">Need a custom order?</h2>
+          <p className="mb-8 leading-relaxed text-foreground/80">
+            For events and special requests, send us your details and we’ll confirm availability, timeline, and pickup
+            or delivery options.
           </p>
           <Link
+            className="inline-block rounded-full bg-primary px-8 py-3 text-sm font-bold uppercase tracking-wide text-primary-foreground shadow-lg transition-transform hover:scale-105"
             to="/contact"
-            className="inline-block bg-primary text-primary-foreground font-bold text-sm uppercase tracking-wide px-8 py-3 rounded-full shadow-lg transition-transform hover:scale-105"
           >
-            CTA Button
+            Contact Us
           </Link>
         </div>
       </section>

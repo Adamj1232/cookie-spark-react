@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Phone, Mail, MapPin } from "lucide-react";
 import pageHeaderBg from "@/assets/page-header-bg.png";
+import { BUSINESS_PROFILE } from "@/features/ordering/config";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
@@ -13,117 +14,101 @@ const Contact = () => {
 
   return (
     <main>
-      {/* Page Header */}
       <section
-        className="relative bg-muted flex flex-col items-center justify-center py-20 px-4"
+        className="relative flex flex-col items-center justify-center bg-muted px-4 py-20"
         style={{
           backgroundImage: `url(${pageHeaderBg})`,
           backgroundSize: "cover",
           backgroundPosition: "center bottom",
         }}
       >
-        <h1 className="font-heading text-foreground text-4xl sm:text-5xl mb-3">
-          Contact
-        </h1>
-        <p className="text-muted-foreground text-base sm:text-lg">
-          Subheading: Craft a compelling subheading that sparks curiosity.
-        </p>
+        <h1 className="mb-3 text-4xl text-foreground sm:text-5xl">Contact</h1>
+        <p className="text-base text-foreground/80 sm:text-lg">Questions, custom orders, or delivery requests in Arvada/Denver.</p>
       </section>
 
-      {/* Contact Content */}
-      <section className="max-w-6xl mx-auto px-4 py-16 sm:py-24 grid md:grid-cols-2 gap-12">
-        {/* Info */}
+      <section className="mx-auto grid max-w-6xl gap-12 px-4 py-16 sm:py-24 md:grid-cols-2">
         <div>
-          <h2 className="font-heading text-foreground text-3xl sm:text-4xl mb-4">
-            Contact Us
-          </h2>
-          <p className="text-foreground/80 leading-relaxed mb-10">
-            Ready to bring your vision to life? Contact me today, and let's
-            create something amazing together!
+          <h2 className="mb-4 text-3xl text-foreground sm:text-4xl">Get in touch</h2>
+          <p className="mb-10 leading-relaxed text-foreground/80">
+            We reply quickly on order inquiries and special requests. Include your requested date and quantity so we can
+            provide an accurate confirmation.
           </p>
 
           <div className="space-y-6">
             <div className="flex items-start gap-4">
-              <Phone className="text-primary mt-1 shrink-0" size={20} />
+              <Phone className="mt-1 shrink-0 text-primary" size={20} />
               <div>
                 <p className="font-bold text-foreground">Phone</p>
-                <p className="text-foreground/70">(303) 555-0105</p>
+                <p className="text-foreground/70">{BUSINESS_PROFILE.phone}</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <Mail className="text-primary mt-1 shrink-0" size={20} />
+              <Mail className="mt-1 shrink-0 text-primary" size={20} />
               <div>
                 <p className="font-bold text-foreground">Email</p>
-                <p className="text-foreground/70">support@example.com</p>
+                <p className="text-foreground/70">{BUSINESS_PROFILE.email}</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <MapPin className="text-primary mt-1 shrink-0" size={20} />
+              <MapPin className="mt-1 shrink-0 text-primary" size={20} />
               <div>
-                <p className="font-bold text-foreground">Address</p>
+                <p className="font-bold text-foreground">Location</p>
                 <p className="text-foreground/70">
-                  6391 Elgin St. Celina, Delaware 10299
+                  {BUSINESS_PROFILE.city}, {BUSINESS_PROFILE.state}
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Form */}
-        <div className="bg-muted rounded-lg p-8">
-          <h3 className="font-heading text-foreground text-xl mb-6">
-            Send us a message
-          </h3>
+        <div className="rounded-lg bg-muted p-8">
+          <h3 className="mb-6 text-xl text-foreground">Send us a message</h3>
 
           {submitted ? (
-            <p className="text-primary font-bold text-lg">
-              Thank you! We'll get back to you soon.
-            </p>
+            <p className="text-lg font-bold text-primary">Thank you. We will follow up with order details shortly.</p>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <form className="space-y-5" onSubmit={handleSubmit}>
               <div>
                 <input
-                  type="text"
+                  className="w-full rounded-md border border-border bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+                  onChange={(e) => setForm({ ...form, name: e.target.value })}
                   placeholder="Name"
                   required
+                  type="text"
                   value={form.name}
-                  onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  className="w-full bg-background border border-border rounded-md px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
                 />
               </div>
               <div>
-                <label className="block text-sm font-bold text-foreground mb-1">
-                  Phone Number
-                </label>
+                <label className="mb-1 block text-sm font-bold text-foreground">Phone Number</label>
                 <input
+                  className="w-full rounded-md border border-border bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+                  onChange={(e) => setForm({ ...form, phone: e.target.value })}
                   type="tel"
                   value={form.phone}
-                  onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                  className="w-full bg-background border border-border rounded-md px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
                 />
               </div>
               <div>
                 <input
-                  type="email"
+                  className="w-full rounded-md border border-border bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+                  onChange={(e) => setForm({ ...form, email: e.target.value })}
                   placeholder="Email"
                   required
+                  type="email"
                   value={form.email}
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  className="w-full bg-background border border-border rounded-md px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
                 />
               </div>
               <div>
                 <textarea
-                  placeholder="Comment or Message"
+                  className="w-full resize-none rounded-md border border-border bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+                  onChange={(e) => setForm({ ...form, message: e.target.value })}
+                  placeholder="Comment or message"
                   rows={4}
                   value={form.message}
-                  onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  className="w-full bg-background border border-border rounded-md px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring resize-none"
                 />
               </div>
               <button
+                className="w-full rounded-full bg-primary py-3 font-bold uppercase tracking-wide text-primary-foreground transition-transform hover:scale-[1.02]"
                 type="submit"
-                className="w-full bg-primary text-primary-foreground font-bold uppercase tracking-wide py-3 rounded-full transition-transform hover:scale-[1.02]"
               >
                 Submit
               </button>
