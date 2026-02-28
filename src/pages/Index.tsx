@@ -3,7 +3,7 @@ import cookieStackLeft from "@/assets/cookie-stack-left.png";
 import cookieStackRight from "@/assets/cookie-stack-right.png";
 import cookieTopView from "@/assets/cookie-top-view.png";
 import cookieStackHero from "@/assets/cookie-stack-hero.png";
-import logoSquare from "@/assets/logo-square.png";
+import logoCircle from "@/assets/logo-circle.png";
 import { CookieMenuSection } from "@/features/ordering/components/CookieMenuSection";
 import { LocalBusinessSchema } from "@/features/ordering/components/LocalBusinessSchema";
 
@@ -13,18 +13,24 @@ const Index = () => {
       <LocalBusinessSchema />
 
       {/* ── Hero ─────────────────────────────────────────── */}
-      <section className="relative flex min-h-[80vh] w-full items-center justify-center overflow-hidden bg-cookie-pink">
+      {/*
+        pb- offset pushes the centered logo up on small screens so
+        the absolute-positioned bottom cookie stacks don't overlap it.
+        md+ screens have enough height that no offset is needed.
+      */}
+      <section className="relative flex min-h-[82vh] w-full items-center justify-center overflow-hidden bg-cookie-pink pb-24 sm:pb-20 md:pb-0">
 
         {/* Top-left — top-view cookie, slow clockwise spin */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -left-8 -top-8 h-36 w-36 overflow-hidden rounded-full animate-spin-slow
-                     sm:-left-10 sm:-top-10 sm:h-48 sm:w-48
-                     lg:-left-12 lg:-top-12 lg:h-60 lg:w-60"
+          className="pointer-events-none absolute -left-6 -top-6 h-28 w-28 overflow-hidden rounded-full animate-spin-slow
+                     sm:-left-8 sm:-top-8 sm:h-40 sm:w-40
+                     md:-left-10 md:-top-10 md:h-52 md:w-52
+                     lg:-left-12 lg:-top-12 lg:h-64 lg:w-64"
         >
           <img
             alt=""
-            className="h-full w-full scale-[1.15] object-cover object-center"
+            className="h-full w-full scale-[1.2] object-cover object-center"
             src={cookieTopView}
           />
         </div>
@@ -32,13 +38,14 @@ const Index = () => {
         {/* Top-right — top-view cookie, slower counter-clockwise spin */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 overflow-hidden rounded-full animate-spin-slow-reverse
-                     sm:-right-10 sm:-top-10 sm:h-44 sm:w-44
+          className="pointer-events-none absolute -right-6 -top-6 h-24 w-24 overflow-hidden rounded-full animate-spin-slow-reverse
+                     sm:-right-8 sm:-top-8 sm:h-36 sm:w-36
+                     md:-right-10 md:-top-10 md:h-44 md:w-44
                      lg:-right-12 lg:-top-12 lg:h-56 lg:w-56"
         >
           <img
             alt=""
-            className="h-full w-full scale-[1.15] object-cover object-center"
+            className="h-full w-full scale-[1.2] object-cover object-center"
             src={cookieTopView}
           />
         </div>
@@ -46,12 +53,12 @@ const Index = () => {
         {/* Bottom-left — hero stack, no animation, left-anchored */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute bottom-0 -left-2 w-28
-                     sm:w-40 md:w-52 lg:w-64"
+          className="pointer-events-none absolute bottom-0 -left-2 w-24
+                     sm:w-36 md:w-48 lg:w-64"
         >
           <img
             alt=""
-            className="w-full h-auto object-contain object-bottom"
+            className="h-auto w-full object-contain object-bottom"
             src={cookieStackHero}
           />
         </div>
@@ -59,22 +66,22 @@ const Index = () => {
         {/* Bottom-right — hero stack mirrored, no animation */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute bottom-0 -right-2 w-28
-                     sm:w-40 md:w-52 lg:w-64"
+          className="pointer-events-none absolute bottom-0 -right-2 w-24
+                     sm:w-36 md:w-48 lg:w-64"
         >
           <img
             alt=""
-            className="w-full h-auto object-contain object-bottom [transform:scaleX(-1)]"
+            className="h-auto w-full object-contain object-bottom [transform:scaleX(-1)]"
             src={cookieStackHero}
           />
         </div>
 
-        {/* Centre logo */}
-        <div className="relative z-10 animate-logo-float px-4">
+        {/* Centre logo — static, no animation */}
+        <div className="relative z-10 px-6">
           <img
             alt="Little Cookie Co. — Freshly baked in Arvada"
-            className="w-44 drop-shadow-2xl sm:w-64 md:w-80 lg:w-[22rem]"
-            src={logoSquare}
+            className="w-48 sm:w-64 md:w-80 lg:w-[22rem]"
+            src={logoCircle}
           />
         </div>
       </section>
