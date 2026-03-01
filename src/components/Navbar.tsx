@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, ShoppingBag, X } from "lucide-react";
-import cookieIcon from "@/assets/cookie-icon.png";
+import logoCircle from "@/assets/logo-circle.png";
 import { Button } from "@/components/ui/button";
 import { useOrdering } from "@/features/ordering/context/OrderingProvider";
 
@@ -21,9 +21,8 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50 border-b border-border/80 bg-background/95 shadow-sm backdrop-blur-sm">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between gap-3">
-          <Link className="flex items-center gap-2" to="/">
-            <img alt="Little Cookie Co." className="h-10 w-10" src={cookieIcon} />
-            <span className="font-heading text-lg tracking-wide text-primary">LITTLE COOKIE CO.</span>
+          <Link className="flex items-center" to="/">
+            <img alt="Little Cookie Co." className="h-12 w-12" src={logoCircle} />
           </Link>
 
           <div className="hidden items-center gap-6 md:flex">
