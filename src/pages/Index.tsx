@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
 import cookieStackLeft from "@/assets/cookie-stack-left.png";
 import cookieStackRight from "@/assets/cookie-stack-right.png";
-import cookieTopView from "@/assets/cookie-top-view.png";
-import cookieStackHero from "@/assets/cookie-stack-hero.png";
-import logoCircle from "@/assets/logo-circle.png";
+import cookieMascot from "@/assets/cookie-icon.png";
 import { CookieMenuSection } from "@/features/ordering/components/CookieMenuSection";
 import { LocalBusinessSchema } from "@/features/ordering/components/LocalBusinessSchema";
 
@@ -13,86 +11,35 @@ const Index = () => {
       <LocalBusinessSchema />
 
       {/* ── Hero ─────────────────────────────────────────── */}
-      {/*
-        pb- offset pushes the centered logo up on small screens so
-        the absolute-positioned bottom cookie stacks don't overlap it.
-        md+ screens have enough height that no offset is needed.
-      */}
-      <section className="relative flex min-h-[82vh] w-full items-center justify-center overflow-hidden bg-cookie-pink pb-24 sm:pb-20 md:pb-0">
+      <section className="bg-gingham w-full overflow-hidden">
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-6 py-10 sm:flex-row sm:items-center sm:gap-6 sm:py-12 md:gap-10 md:py-14 lg:gap-14 lg:py-16">
 
-        {/* Top-left — top-view cookie, slow clockwise spin, organic blob shape */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -left-4 -top-4 h-24 w-24 overflow-hidden animate-spin-slow
-                     sm:-left-5 sm:-top-5 sm:h-32 sm:w-32
-                     md:h-40 md:w-40
-                     lg:-left-6 lg:-top-6 lg:h-48 lg:w-48"
-          style={{ borderRadius: '45% 55% 60% 40% / 50% 40% 55% 45%' }}
-        >
-          <img
-            alt=""
-            className="h-full w-full scale-[1.1] object-cover object-center"
-            src={cookieTopView}
-          />
+          {/* Mascot */}
+          <div className="w-36 flex-shrink-0 sm:w-44 md:w-52 lg:w-60">
+            <img
+              alt="Little Cookie Co. mascot"
+              className="h-auto w-full drop-shadow-lg"
+              src={cookieMascot}
+            />
+          </div>
+
+          {/* Text block */}
+          <div className="min-w-0 text-center sm:text-left">
+            <h1 className="font-heading leading-none tracking-tight text-primary
+                           text-4xl sm:text-5xl md:text-[3.5rem] lg:text-6xl">
+              LITTLE COOKIE CO.
+            </h1>
+            <p className="mt-1 font-heading text-primary
+                          text-lg sm:text-xl md:text-2xl lg:text-3xl">
+              BAKED FRESH. SERVED HAPPY
+            </p>
+            <p className="mt-2 font-heading tracking-widest text-primary/75
+                          text-xs sm:text-sm md:text-sm lg:text-base">
+              SMALL BATCH COOKIES, BAKED TO ORDER IN ARVADA
+            </p>
+          </div>
+
         </div>
-
-        {/* Top-right — top-view cookie, slower counter-clockwise spin, different blob */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-3 -top-3 h-20 w-20 overflow-hidden animate-spin-slow-reverse
-                     sm:-right-4 sm:-top-4 sm:h-28 sm:w-28
-                     md:h-36 md:w-36
-                     lg:-right-5 lg:-top-5 lg:h-44 lg:w-44"
-          style={{ borderRadius: '60% 40% 45% 55% / 55% 60% 40% 50%' }}
-        >
-          <img
-            alt=""
-            className="h-full w-full scale-[1.1] object-cover object-center"
-            src={cookieTopView}
-          />
-        </div>
-
-        {/* Bottom-left — hero stack, no animation, left-anchored */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute bottom-0 -left-2 w-24
-                     sm:w-36 md:w-48 lg:w-64"
-        >
-          <img
-            alt=""
-            className="h-auto w-full object-contain object-bottom"
-            src={cookieStackHero}
-          />
-        </div>
-
-        {/* Bottom-right — hero stack, same direction, no animation */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute bottom-0 -right-2 w-24
-                     sm:w-36 md:w-48 lg:w-64"
-        >
-          <img
-            alt=""
-            className="h-auto w-full object-contain object-bottom"
-            src={cookieStackHero}
-          />
-        </div>
-
-        {/* Centre logo — static, no animation */}
-        <div className="relative z-10 px-6">
-          <img
-            alt="Little Cookie Co. — Freshly baked in Arvada"
-            className="w-48 sm:w-64 md:w-80 lg:w-[22rem]"
-            src={logoCircle}
-          />
-        </div>
-      </section>
-
-      {/* ── Tagline bar ───────────────────────────────────── */}
-      <section className="bg-cookie-pink py-4">
-        <p className="text-center font-heading text-lg tracking-wider text-primary sm:text-xl md:text-2xl">
-          SMALL-BATCH COOKIES, BAKED TO ORDER IN ARVADA.
-        </p>
       </section>
 
       <CookieMenuSection />

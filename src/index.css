@@ -130,4 +130,24 @@
   .animate-logo-float {
     animation: logo-float 5s ease-in-out infinite;
   }
+
+  /* Gingham / plaid check background */
+  .bg-gingham {
+    background-color: hsl(350 100% 88%);
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.52) 0px,
+        rgba(255, 255, 255, 0.52) 44px,
+        transparent 44px,
+        transparent 88px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.52) 0px,
+        rgba(255, 255, 255, 0.52) 44px,
+        transparent 44px,
+        transparent 88px
+      );
+  }
 }
